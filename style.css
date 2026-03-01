@@ -104,8 +104,7 @@ section {
   width: 56px;
   height: 56px;
   border-radius: 18px;
-  /*background: radial-gradient(circle at 30% 20%, #ffb347, #7f5af0);*/
-  background: radial-gradient(circle at 30% 20%, #6600cc, #ccff99);
+  background: radial-gradient(circle at 30% 20%, #ffb347, #7f5af0);
   display: flex;
   align-items: center;
   justify-content: center;
