@@ -270,3 +270,36 @@ section {
     font-size: 0.92rem;
   }
 }
+
+/* --- FORCE VERTICAL STACKING FOR ALL SECTIONS --- */
+
+.projects,
+.links,
+.elsewhere,
+section {
+  width: 100% !important;
+  display: block !important;
+  clear: both !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Stop flex/grid from affecting section layout */
+.links,
+.link-row,
+.elsewhere-links {
+  display: block !important;
+}
+
+/* Make project grid always full-width and vertical on small screens */
+.project-grid {
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 20px !important;
+}
+
+/* Make project cards stretch full width */
+.project-card {
+  width: 100% !important;
+}
