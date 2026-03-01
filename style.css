@@ -84,6 +84,13 @@ main,
   z-index: 1;
 }
 
+/* Force all sections to stack vertically */
+section {
+  width: 100%;
+  display: block;
+  margin: 40px 0;
+}
+
 .site-header {
   display: flex;
   align-items: center;
@@ -121,18 +128,19 @@ main,
 }
 
 .intro {
-  margin-bottom: 20px;
   padding: 10px 10px 4px;
   color: var(--text-muted);
   font-size: 0.98rem;
 }
 
+/* Projects section spacing fix */
 .projects {
-  margin-bottom: 22px;
+  margin-bottom: 40px;
 }
 
 .projects h2,
-.links h2 {
+.links h2,
+.elsewhere h2 {
   font-size: 1.1rem;
   margin: 0 0 10px;
   letter-spacing: 0.08em;
@@ -140,18 +148,22 @@ main,
   color: var(--text-muted);
 }
 
+/* Grid fix: safer minimum width */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 14px;
 }
 
+/* Equal-height cards fix */
 .project-card {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
   padding: 14px 14px 12px;
   border: 1px solid var(--border-subtle);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card h3 {
@@ -163,6 +175,7 @@ main,
   margin: 0 0 10px;
   color: var(--text-muted);
   font-size: 0.9rem;
+  flex-grow: 1;
 }
 
 .project-links {
@@ -191,11 +204,8 @@ main,
   transform: translateY(-1px);
 }
 
-.links {
-  margin-bottom: 10px;
-}
-
-.link-row {
+.link-row,
+.elsewhere-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -224,7 +234,6 @@ main,
 }
 
 .site-footer {
-  margin-top: 10px;
   padding-top: 10px;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
   font-size: 0.8rem;
