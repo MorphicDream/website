@@ -303,3 +303,13 @@ section {
 .project-card {
   width: 100% !important;
 }
+
+.site-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+
