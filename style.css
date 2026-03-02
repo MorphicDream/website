@@ -304,12 +304,13 @@ section {
   width: 100% !important;
 }
 
+/* Force the logo to the correct size */
 .site-logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 18px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 18px !important;
+  object-fit: cover !important;
+  display: block !important;
 }
 
 
