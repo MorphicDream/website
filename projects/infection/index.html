@@ -21,11 +21,11 @@
 
     <main>
 
-        <!-- OVERVIEW BOX -->
         <section class="project-card">
             <h2>Overview</h2>
             <p>
-                Add desc later
+                The idea of the game-mode is that the world has become infected.  Infected blocks hurt when stood on
+                and zombies spawns on them and if the blocks are broken silver fish are released.
             </p>
             <p><strong>Platform:</strong> Minecraft - Java </p>
         </section>
@@ -34,7 +34,42 @@
         <section class="project-card">
             <h2>Details</h2>
             <p>
-                Add deeper information here — features, mechanics, development notes, goals, etc.
+                There are three phases to this game-mode, in order to keep the game-mode fresh and make the infection
+                slowly become worse.  There is a counter to say when blocks will be infected and also what phase is
+                happening at that moment.
+            </p>
+
+            <p>
+                Phase one - This is a simple phase the blocks around players will become infected every ten seconds.
+                These blocks dont do much except if broken they will spawn silver fish.  Creepers that explode will
+                infect the ground as well.
+            </p>
+
+            <p>
+                Phase two - This makes the blocks give a small amount of damage when stood on and still create silver
+                fish when broken.  Water becomes infected as well so swimming causes damage.  Boats are also effected
+                when in water, after so long they will break.
+            </p>
+
+            <p>
+                Phase three - This is where is gets interesting, all the above happens but the damage from blocks is
+                increased and zombies will spawn.  The zombies are not effected by daylight.  When zombies spawn
+                underwater they will become drowned and when drowned in desert biomes they will become husks.
+            </p>
+
+            <p>
+                A general thing across all phases are that any mobs spawned only have a life expectancy of around thirty
+                 seconds.  When they expire they turn into infected blocks, this includes the silver fish.  This was
+                created to stop huge amounts of mobs being spawned in.  Although you can set a max spawn limit in the
+                config.  There are a few blocks that wont be infected, these are mostly chests, lava, water, obsidian,
+                end portals etc, this is to make sure the game can actually be completed without a critical block becoming
+                infected.
+            </p>
+
+            <p>
+                The idea of the game-mode is to get to the end and destroy the dragon.  When the dragon is killed the
+                infection stops.  The infection also pauses when all players leave the server, this was just in case
+                server owners wanted to run an event and do a phase every day or week.
             </p>
         </section>
 
@@ -44,7 +79,7 @@
             <div class="project-links">
                 <a href="#" class="pill-link">GitHub</a>
                 <a href="#" class="pill-link">Download</a>
-                <a href="#" class="pill-link">Documentation</a>
+                <!--<a href="#" class="pill-link">Documentation</a>-->
                 <a href="/" class="pill-link">Back to Main Page</a>
             </div>
         </section>
