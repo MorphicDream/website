@@ -313,4 +313,10 @@ section {
   display: block !important;
 }
 
+/* Highlighing text */
+.highlight {
+  color: red;
+  font-weight: 600;
+  }
+
 
