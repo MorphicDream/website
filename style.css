@@ -319,4 +319,41 @@ section {
   font-weight: 600;
   }
 
+.project-card .bug-list {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.project-card .bug-list li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.project-card .bug-list li::before {
+    content: "– ";
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.project-card .fixed-list {
+    list-style: none;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.project-card .fixed-list li {
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+
+.project-card .fixed-list li::before {
+    content: "✔ ";
+    color: #3ccf4e; /* clean, readable green */
+    font-weight: bold;
+}
+
+
+
+
 
