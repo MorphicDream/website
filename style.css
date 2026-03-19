@@ -349,7 +349,7 @@ section {
 
 .project-card .fixed-list li::before {
     content: "✔ ";
-    color: #3ccf4e; /* clean, readable green */
+    color: #3ccf4e;
     font-weight: bold;
 }
 
