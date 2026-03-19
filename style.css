@@ -366,7 +366,7 @@ section {
 
 .project-card .ideas-list li::before {
     content: "? ";
-    color: #ff0000;
+    color: #3fa9fs;
     font-weight: bold;
 }
 
