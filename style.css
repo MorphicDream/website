@@ -371,7 +371,8 @@ section {
 }
 
 .spaced {
-    margin-top : 3.5rem;
+    margin-top : 20px;
+    padding-top: 20px;
 }
 
 
