@@ -1,0 +1,84 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Infection Development</title>
+  {% include style.html %}
+</head>
+
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <img src="/images/morphic1.png" alt="MorphicDream Logo" class="site-logo">
+    <div class="title-block">
+      <h1>Infection Development Progress</h1>
+      <p class="tagline">Just a list of known bugs, fixed bugs and ideas that come up</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-card">
+      <h2>Development</h2>
+      <h3 class="spaced">
+        Current Bugs including 'feature' bugs
+      </h3>
+      <ul class="bug-list">
+        <li>Standing on half blocks like lily-pads or the bottom half of a slab means the block doesn't become
+          infected</li>
+        <li>Zombie spawn rates exceed the config controls and no default in place</li>
+        <li>When server is restarted infected Zombies revert to being normal zombies and die in daylight</li>
+        <li>Silverfish seem to not spawn if there is obsidian or bedrock etc under the block that is broken
+          (only tested in creative)</li>
+        <li>Boats when infected don't change to dark oak</li>
+        <li>Boats don't get the glow effect when partially damaged</li>
+        <li>Boats also don't break when enough damage taken</li>
+        <li>Respawning needs to have a timer set</li>
+        <li>Now with the warden, potential to use those blocks instead for infected blocks</li>
+        <li>Not really a bug but glowing effect colours don't work on shaders (just in case it comes up for people)</li>
+        <li>Make plugin set it to daytime always, we don't need night (might get a bit too hard fighting normal mobs AND infected)</li>
+        <li>Make sure endermen can spawn so players can get to the end</li>
+        <li>Tidy up the code for making zombies glow, remove all entries before restarting etc</li>
+      </ul>
+
+      <h3 class="spaced"> Ideas that might be implemented</h3>
+      <ul class="ideas-list">
+        <li>Make infected blocks glow</li>
+        <li>Have infected blocks infect the blocks next to it rather than just always the circle from player</li>
+        <li>Add other mobs other than zombies that are infected (creepers, skeletons, killer sheep)</li>
+        <li>Maybe have boots that protect the wearer from the infected blocks, but they take more damage so don't last too long</li>
+        <li>Have like a poison effect if hit by an infected mob or the ground(this seems harsh)</li>
+        <li>Add infected specific items much like the boots but protection from all infected so even attacks</li>
+        <li class="highlight-blue">Have a non-infected dimension, but it has no resources so we can build houses and stuff</li>
+      </ul>
+
+      <h3 class="spaced">Bugs Fixed</h3>
+      <ul class="fixed-list">
+        <li>Zombie types spawn depending on the ground with sand meaning husks and underwater meaning drowned
+          with every other time normal zombie types spawned</li>
+        <li>Death messages now fire at the correct time and have colours</li>
+        <li>Zombies spawned one block lower than they should</li>
+        <li>Config now allows the ability to manually set the phase times</li>
+        <li>Added a glow effect for zombies(they glow red)</li>
+      </ul>
+    </section>
+
+    <!-- LINKS BOX -->
+    <section class="project-card">
+      <h2>Links</h2>
+      <div class="project-links">
+        <a href="index.html" class="pill-link">Infection</a>
+        <a href="/" class="pill-link">Back to Main Page</a><!--Always include this to get back to the main page-->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Created by MorphicDream · <span class="accent">Tinkerer of code</span></p>
+  </footer>
+
+</div>
+</body>
+</html>
