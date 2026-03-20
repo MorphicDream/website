@@ -425,6 +425,33 @@ code{
     color: #CE9178; /*orange but on its own*/
 }
 
+/* Shared hover behaviour for all list types */
+.bug-list li:hover,
+.fixed-list li:hover,
+.ideas-list li:hover {
+  cursor: pointer;
+  transition: color 0.25s ease, text-shadow 0.25s ease, transform 0.25s ease;
+  transform: scale(1.03);
+}
+
+/* red glow */
+.bug-list li:hover {
+  color: #ff4d4d;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+/* green glow */
+.fixed-list li:hover {
+  color: #66ff99;
+  text-shadow: 0 0 8px rgba(102, 255, 153, 0.6);
+}
+
+/* blue glow */
+.ideas-list li:hover {
+  color: #66aaff;
+  text-shadow: 0 0 8px rgba(102, 170, 255, 0.6);
+}
+
 
 
 
