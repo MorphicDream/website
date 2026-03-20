@@ -443,7 +443,7 @@ code{
 /* BUG GLITCH EFFECT */
 .bug-list li {
   position: relative;
-  transition: color 0.2s ease, text-shadow 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .bug-list li:hover {
