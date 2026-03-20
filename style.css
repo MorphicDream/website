@@ -435,10 +435,44 @@ code{
 }
 
 /* red glow */
+/* Glitch effect for bugs */
+.bug-list li {
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* On hover, activate glitch */
 .bug-list li:hover {
   color: #ff4d4d;
-  text-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+  text-shadow:
+    2px 0 rgba(255, 0, 0, 0.6),
+    -2px 0 rgba(0, 150, 255, 0.6);
+  animation: glitch 0.3s infinite;
 }
+
+/* Keyframes for glitch jitter */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-1px, 1px);
+  }
+  40% {
+    transform: translate(1px, -1px);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+  }
+  80% {
+    transform: translate(1px, 1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+
 
 /* green glow */
 .fixed-list li:hover {
