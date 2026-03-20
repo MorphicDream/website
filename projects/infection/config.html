@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project – Brewed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/images/morphic1.png">
+</head>
+
+<body>
+<div class="page">
+
+  <header class="site-header">
+    <img src="/images/morphic1.png" alt="MorphicDream Logo" class="site-logo">
+    <div class="title-block">
+      <h1>Infected Config</h1>
+      <p class="tagline">Details of the config for Infected plugin</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- OVERVIEW BOX -->
+    <section class="project-card">
+      <h2>Overview</h2>
+      <p>
+        This shows the format used in the config for the Infected plugin
+      </p>
+      <p><strong>Platform:</strong> YML (config)</p>
+    </section>
+
+    <!-- DETAILS BOX -->
+    <section class="project-card">
+      <h2>Config Layout</h2>
+      <pre class="config-block"><code>
+      <span class="comment">#Sets if the infection should be started with commands - true means using the /infection stop/start command</span>
+      <span class="comment">#If set to false the infection will start when one player is online and stop when there is no-one online</span>
+      <span class="key">ManualControl:</span> <span class="value">false</span>
+
+      <span class="comment">#Sets the maximum limit for infected zombies across the world</span>
+      <span class="key">MaxInfectedZombiesSpawned:</span> <span class="value">20</span>
+
+      <span class="comment">#A global time in seconds for each phase to last</span>
+      <span class="key">TimeBetweenPhases:</span> <span class="value">60</span>
+
+      <span class="comment">#Setting this to true means each phase will be the same as TimeBetweenPhase</span>
+      <span class="comment">#Setting this to false means you need to set the three phase times</span>
+      <span class="key">UseSingularPhaseTime:</span> <span class="value">true</span>
+
+      <span class="comment">#These will set the times for each phase individually in seconds(60 = 1 minute)</span>
+      <span class="key">PhaseOneTime:</span> <span class="value">60</span>
+      <span class="key">PhaseTwoTime:</span> <span class="value">60</span>
+      <span class="key">PhaseThreeTime:</span> <span class="value">60</span>
+      </code></pre>
+    </section>
+
+    <section class="project-card">
+      <h2>More details</h2>
+      <p>
+        <span class="key">ManualControl</span> is a boolean that will enable or disable the commands used to stop and start the infection.
+        By default, it's set to false as it's mainly used for testing the plugin.  But it was suggested that if someone
+        was streaming or had an event they might want to be able to start the infection when everyone was ready.
+      </p>
+      <p>
+        <span class="key">MaxInfectedZombiesSpawned</span> just sets a limit on how many zombies will spawn, it's set to 20 by default.  There
+        is no upper limit really but when in the last phase of the game the zombies spawn in groups of upto four
+        zombies at a time.  If there are more players i would be worth upping the limit but for one to two people 20 is
+        more than enough.
+      </p>
+      <p>
+        <span class="key">TimeBetweenPhases</span> this value needs to be set in seconds and is only used when the
+        <span class="key">UseSingularPhaseTime</span> is set to true, which it will be by default.  It just means that
+        every phase will run for the same amount of time.
+      </p>
+      <p>
+        <span class="key">UseSingularPhaseTime</span> should be set to true if you want the phases to all be the same
+        length of time.  When set to false the next values need to be set.  This is set to true when created.
+      </p>
+      <p>
+        <span class="key">PhaseOneTime, PhaseTwoTime</span> and <span class="key">PhaseThreeTime</span> are just to be
+        used when <span class="key">UseSingularPhaseTime</span> is set to false.  Each value is based on seconds and
+        default is 60 seconds.
+      </p>
+      <p><strong>Platform:</strong> YML (config)</p>
+    </section>
+
+    <!-- LINKS BOX -->
+    <section class="project-card">
+      <h2>Links</h2>
+      <div class="project-links">
+        <a href="#" class="pill-link">GitHub</a>
+        <a href="#" class="pill-link">Download</a>
+        <a href="#" class="pill-link">Documentation</a>
+        <a href="/" class="pill-link">Back to Main Page</a><!--Always include this to get back to the main page-->
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Created by MorphicDream · <span class="accent">Tinkerer of code</span></p>
+  </footer>
+
+</div>
+</body>
+</html>

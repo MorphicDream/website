@@ -314,8 +314,18 @@ section {
 }
 
 /* Highlighing text */
-.highlight {
-  color: red;
+.highlight-red {
+  color: #ff0000;
+  font-weight: 600;
+  }
+
+.highlight-blue {
+  color: #3fa9f5;
+  font-weight: 600;
+  }
+
+.highlight-green {
+  color: #3ccf4e;
   font-weight: 600;
   }
 
@@ -374,6 +384,48 @@ section {
     margin-top : 20px;
     padding-top: 20px;
 }
+
+pre{
+    background: #lelele;
+    color: #dcdcdc;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+}
+
+code{
+    font-family: "Fira Code", "Consolas", monospace;
+}
+
+.config-block {
+    background: #1e1e1e;
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: "Fira Code", Consolas, monospace;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #dcdcdc;/*off white*/
+}
+
+.config-block .comment {
+    color: #6A9955;/*green*/
+}
+
+.config-block .key {
+    color: #CE9178; /*orange*/
+}
+
+.config-block .value {
+    color: #DCDCAA; /*yellow-ish */
+}
+
+.key {
+    color: #CE9178; /*orange but on its own*/
+}
+
+
 
 
 
