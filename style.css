@@ -438,6 +438,11 @@ code{
   transition: color 0.25s ease, text-shadow 0.25s ease;
 }
 
+.bug-list li:hover {
+  transform: translate(5px, 5px);
+}
+
+
 /* red glow */
 /* Glitch effect for bugs */
 /* BUG GLITCH EFFECT */
