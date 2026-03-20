@@ -456,7 +456,7 @@ code{
   text-shadow:
     2px 0 rgba(255, 0, 0, 0.6),
     -2px 0 rgba(0, 150, 255, 0.6);
-  animation: md-bug-glitch 0.8s infinite;
+  animation: md-bug-glitch 2.8s infinite;
 }
 
 @keyframes md-bug-glitch {
