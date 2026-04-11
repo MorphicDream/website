@@ -51,7 +51,7 @@ body {
   overflow: hidden;
 }
 
-/* subtle top-right glow */
+/* top-right glow */
 .page::before {
   content: "";
   position: absolute;
@@ -64,7 +64,7 @@ body {
   pointer-events: none;
 }
 
-/* subtle bottom-left glow */
+/* bottom-left glow */
 .page::after {
   content: "";
   position: absolute;
@@ -84,7 +84,6 @@ main,
   z-index: 1;
 }
 
-/* Force all sections to stack vertically */
 section {
   width: 100%;
   display: block;
@@ -133,7 +132,6 @@ section {
   font-size: 0.98rem;
 }
 
-/* Projects section spacing fix */
 .projects {
   margin-bottom: 40px;
 }
@@ -148,14 +146,12 @@ section {
   color: var(--text-muted);
 }
 
-/* Grid fix: safer minimum width */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 14px;
 }
 
-/* Equal-height cards fix */
 .project-card {
   background: var(--card-bg);
   border-radius: var(--radius-lg);
@@ -245,7 +241,6 @@ section {
   color: var(--accent);
 }
 
-/* Responsive tweaks */
 @media (max-width: 640px) {
   .page {
     padding: 20px 16px 16px;
@@ -271,8 +266,6 @@ section {
   }
 }
 
-/* --- FORCE VERTICAL STACKING FOR ALL SECTIONS --- */
-
 .projects,
 .links,
 .elsewhere,
@@ -284,14 +277,12 @@ section {
   margin-right: 0 !important;
 }
 
-/* Stop flex/grid from affecting section layout */
 .links,
 .link-row,
 .elsewhere-links {
   display: block !important;
 }
 
-/* Make project grid always full-width and vertical on small screens */
 .project-grid {
   width: 100% !important;
   display: grid !important;
@@ -299,12 +290,10 @@ section {
   gap: 20px !important;
 }
 
-/* Make project cards stretch full width */
 .project-card {
   width: 100% !important;
 }
 
-/* Force the logo to the correct size */
 .site-logo {
   width: 56px !important;
   height: 56px !important;
@@ -328,6 +317,7 @@ section {
   color: #3ccf4e;
   font-weight: 600;
   }
+/* End of Highlighting */
 
 .project-card .bug-list {
     list-style: none;
