@@ -501,27 +501,27 @@ code{
     pointer-events: none;
 }
 
-#infection-background {
+/*#infection-background {
     position: fixed;
     inset: 0;
     z-index: 1;
     pointer-events: none;
-}
+}*/
 
-#infection-canvas {
+/*#infection-canvas {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-}
+}*/
 
-#infection-glow {
+/*#infection-glow {
     position: absolute;
     inset: 0;
     background: radial-gradient(circle, rgba(0,255,0,0.25) 0%, rgba(0,255,0,0) 70%);
     animation: breathe 3s ease-in-out infinite;
-}
+}*/
 
 @keyframes breathe {
     0%   { opacity: 0.4; }
