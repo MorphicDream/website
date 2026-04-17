@@ -140,7 +140,7 @@
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-       infectionOpacity += 0.005; // fade-in speed
+       infectionOpacity = Math.min(infectionOpacity + 0.005, 0.4);
 
         if (infectionOpacity > 1) infectionOpacity = 1; // clamp
 
