@@ -164,16 +164,25 @@
         // Particles
         if (infectionDone) {
             particles.forEach(p => {
-                p.x += Math.cos(p.angle) * p.speed;
-                p.y += Math.sin(p.angle) * p.speed;
+        // Random drift like before
+                p.angle += (Math.random() - 0.5) * 0.2; // slight jitter
+                p.x += Math.cos(p.angle) * p.speed * 0.5;
+                p.y += Math.sin(p.angle) * p.speed * 0.5;
 
-                ctx.fillStyle = "rgba(0,255,0,0.7)";
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
-            });
-        }
+        // Keep particles on screen (soft bounce)
+                if (p.x < 0 || p.x > canvas.width) {
+                    p.angle = Math.PI - p.angle;
+                }
+                if (p.y < 0 || p.y > canvas.height) {
+                    p.angle = -p.angle;
+                }
 
+        ctx.fillStyle = "rgba(0,255,0,0.7)";
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+    });
+}
         requestAnimationFrame(draw);
     }
 
