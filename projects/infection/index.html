@@ -115,70 +115,88 @@
     const canvas = document.getElementById("infection-canvas");
     const ctx = canvas.getContext("2d");
 
-if (!ctx) console.error("Canvas context is NULL"); <!--Hope this never fires-->
+    if (!ctx) console.error("Canvas context is NULL"); // Hope this never fires
 
     function resize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     }
     resize();
     window.addEventListener("resize", resize);
 
+    // PARTICLES WITH update() + draw()
     const particles = [];
     for (let i = 0; i < 80; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 3 + 1,
-        dx: (Math.random() - 0.5) * 0.7,
-        dy: (Math.random() - 0.5) * 0.7,
-      });
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 3 + 1,
+            dx: (Math.random() - 0.5) * 0.7,
+            dy: (Math.random() - 0.5) * 0.7,
+
+            update() {
+                this.x += this.dx;
+                this.y += this.dy;
+
+                if (this.x < 0 || this.x > canvas.width) this.dx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.dy *= -1;
+            },
+
+            draw(ctx) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+                ctx.fillStyle = "rgba(0,255,100,0.8)";
+                ctx.fill();
+            }
+        });
     }
 
     let infectionRadius = 300;
     let infectionGrow = 1.5;
 
-function animate() {
-    requestAnimationFrame(animate);
+    function animate() {
+        requestAnimationFrame(animate);
 
-    // Make sure canvas is always full screen
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+        // Keep canvas full screen
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
 
-    // CLEAR FIRST
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // CLEAR
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // DRAW BLOOM
-    ctx.beginPath();
-    ctx.arc(canvas.width / 2, canvas.height / 2, infectionRadius, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0,255,100,0.25)";
-    ctx.fill();
+        // BLOOM
+        ctx.beginPath();
+        ctx.arc(canvas.width / 2, canvas.height / 2, infectionRadius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(0,255,100,0.25)";
+        ctx.fill();
 
-    infectionRadius += infectionGrow;
-    infectionGrow *= 1.02;
+        infectionRadius += infectionGrow;
+        infectionGrow *= 1.02;
 
-    // DRAW PARTICLES
-    for (let p of particles) {
-        p.update();
-        p.draw(ctx);
+        // PARTICLES
+        for (let p of particles) {
+            p.update();
+            p.draw(ctx);
+        }
     }
-}
-resize();
-animate();
 
-console.log("FADE CODE REACHED");
+    resize();
+    animate();
+
+    console.log("FADE CODE REACHED");
+
     // fade out splash only (canvas stays)
     window.addEventListener("load", () => {
-    const splash = document.getElementById("infection-splash");
-    const page = document.getElementById("page-content");
+        const splash = document.getElementById("infection-splash");
+        const page = document.getElementById("page-content");
 
-    if (splash) {
-        setTimeout(() => {
-            splash.classList.add("hidden");
-            page.classList.add("visible");
-        }, 2500);
-    }
-});
+        if (splash) {
+            setTimeout(() => {
+                splash.classList.add("hidden");
+                page.classList.add("visible");
+            }, 2500);
+        }
+    });
 </script>
 </body>
 </html>
