@@ -164,7 +164,7 @@
       requestAnimationFrame(animate);
     }-->
 
-    function animate() {
+    <!--function animate() {
     requestAnimationFrame(animate);
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -180,7 +180,29 @@
         p.update();
         p.draw(ctx);
     });
+}-->
+function animate() {
+    requestAnimationFrame(animate);
+
+    // CLEAR FIRST
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // DRAW BLOOM
+    ctx.beginPath();
+    ctx.arc(canvas.width / 2, canvas.height / 2, infectionRadius, 0, Math.PI * 2);
+    ctx.fillStyle = "rgba(0,255,100,0.25)";
+    ctx.fill();
+
+    infectionRadius += infectionGrow;
+    infectionGrow *= 1.02;
+
+    // DRAW PARTICLES
+    particles.forEach(p => {
+        p.update();
+        p.draw(ctx);
+    });
 }
+
 
     animate();
 
