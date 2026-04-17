@@ -551,6 +551,7 @@ code{
     position: fixed;
     inset: 0;
     z-index: 1;      /* behind page content, above body */
+    pointer-events: none;
 }
 
 /*#infection-overlay {
