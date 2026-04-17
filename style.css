@@ -473,7 +473,7 @@ code{
 }
 
 /* Infection Splash Screen */
-#infection-splash {
+/*#infection-splash {
   position: fixed;
   inset: 0;
   background: #000;
@@ -485,6 +485,20 @@ code{
 #infection-splash.hidden {
   opacity: 0;
   pointer-events: none;
+}*/
+
+#infection-splash {
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 0.8s ease;
+}
+
+#infection-splash.hidden {
+    opacity: 0;
+    pointer-events: none;
 }
 
 /* Permanent animated background */
@@ -498,20 +512,47 @@ code{
 }
 
 /* Page content sits above canvas */
-#page-content,
+/*#page-content,
 .page {
   position: relative;
   z-index: 10;
+}*/
+
+#page-content {
+    opacity: 0;
+    transition: opacity 0.8s ease;
 }
 
-#infection-overlay {
+#page-content.visible {
+    opacity: 1;
+}
+
+#infection-glow {
+    position: absolute;      /* sits above the canvas */
+    inset: 0;                /* fills the entire background */
+    pointer-events: none;    /* doesn't block clicks */
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 100, 0.25) 0%,   /* bright infection core */
+        rgba(0, 255, 100, 0.05) 60%,  /* soft fade outward */
+        rgba(0, 0, 0, 0) 100%         /* fully transparent edges */
+    );
+    animation: infection-breathe 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes infection-breathe {
+    from { opacity: 0.15; }   /* dim */
+    to   { opacity: 0.30; }   /* brighter */
+}
+
+/*#infection-overlay {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle, rgba(0,255,100,0.25) 0%, rgba(0,0,0,0) 70%);
   mix-blend-mode: screen;
   pointer-events: none;
   animation: pulse 1.5s infinite alternate ease-in-out;
-}
+}*/
 
 @keyframes pulse {
   from { opacity: 0.2; }

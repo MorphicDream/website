@@ -10,12 +10,12 @@
 <body>
 
 <!-- Infection Splash (fades away) -->
-<div id="infection-splash">
-    <div id="infection-overlay"></div>
-</div>
+<div id="infection-splash"></div>
 
-<!-- Permanent animated background -->
-<canvas id="infection-canvas"></canvas>
+<div id="infection-background">
+    <canvas id="infection-canvas"></canvas>
+    <div id="infection-glow"></div>
+</div>
 
 <div id="page-content">
     <div class="page">
@@ -170,6 +170,7 @@
     setTimeout(() => {
       const splash = document.getElementById("infection-splash");
       splash.classList.add("hidden");
+      document.getElementById("page-content").classList.add("visible");
     }, 2500);
 </script>
 </body>
