@@ -166,11 +166,17 @@ function animate() {
 resize();
 animate();
     // fade out splash only (canvas stays)
-    setTimeout(() => {
-      const splash = document.getElementById("infection-splash");
-      splash.classList.add("hidden");
-      document.getElementById("page-content").classList.add("visible");
-    }, 2500);
+    window.addEventListener("load", () => {
+    const splash = document.getElementById("infection-splash");
+    const page = document.getElementById("page-content");
+
+    if (splash) {
+        setTimeout(() => {
+            splash.classList.add("hidden");
+            page.classList.add("visible");
+        }, 2500);
+    }
+});
 </script>
 </body>
 </html>
