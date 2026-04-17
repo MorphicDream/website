@@ -184,6 +184,10 @@
 function animate() {
     requestAnimationFrame(animate);
 
+    // Make sure canvas is always full screen
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
     // CLEAR FIRST
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -197,14 +201,13 @@ function animate() {
     infectionGrow *= 1.02;
 
     // DRAW PARTICLES
-    particles.forEach(p => {
+    for (let p of particles) {
         p.update();
         p.draw(ctx);
-    });
+    }
 }
 
-
-    animate();
+animate();
 
     // fade out splash only (canvas stays)
     setTimeout(() => {
