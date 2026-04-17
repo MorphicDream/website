@@ -501,68 +501,50 @@ code{
     pointer-events: none;
 }
 
-#infection-canvas {
+#infection-background {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+    inset: 0;
+    z-index: 1;
     pointer-events: none;
 }
 
-/* Permanent animated background */
-/*#infection-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 0; *//* behind everything *//*
-}*/
+#infection-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
 
-/* Page content sits above canvas */
-/*#page-content,
-.page {
-  position: relative;
-  z-index: 10;
-}*/
+#infection-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, rgba(0,255,0,0.25) 0%, rgba(0,255,0,0) 70%);
+    animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%   { opacity: 0.4; }
+    50%  { opacity: 0.7; }
+    100% { opacity: 0.4; }
+}
 
 #page-content {
+    opacity: 0;
+    transition: opacity 2s ease;
     position: relative;
     z-index: 2;
-    opacity: 0;
-    transition: opacity 0.8s ease;
 }
 
 #page-content.visible {
     opacity: 1;
 }
 
-#infection-glow {
-    position: absolute;      /* sits above the canvas */
-    inset: 0;                /* fills the entire background */
-    pointer-events: none;    /* doesn't block clicks */
-    background: radial-gradient(
-        circle,
-        rgba(0, 255, 100, 0.25) 0%,   /* bright infection core */
-        rgba(0, 255, 100, 0.05) 60%,  /* soft fade outward */
-        rgba(0, 0, 0, 0) 100%         /* fully transparent edges */
-    );
-    animation: infection-breathe 2.5s infinite alternate ease-in-out;
-}
 
 @keyframes infection-breathe {
     from { opacity: 0.15; }   /* dim */
     to   { opacity: 0.30; }   /* brighter */
 }
 
-#infection-background {
-    position: fixed;
-    inset: 0;
-    z-index: 1;      /* behind page content, above body */
-    pointer-events: none;
-}
 
 /*#infection-overlay {
   position: absolute;
