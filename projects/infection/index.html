@@ -164,6 +164,15 @@
     }
 
     animate();
+
+    // fade out after 2.5 seconds
+    setTimeout(() => {
+      const splash = document.getElementById("infection-splash");
+      splash.classList.add("hidden");
+
+      // remove from DOM after fade
+      setTimeout(() => splash.remove(), 900);
+    }, 2500);
 </script>
 </body>
 </html>
