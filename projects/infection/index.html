@@ -115,6 +115,8 @@
     const canvas = document.getElementById("infection-canvas");
     const ctx = canvas.getContext("2d");
 
+if (!ctx) console.error("Canvas context is NULL"); <!--Hope this never fires-->
+
     function resize() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -136,51 +138,6 @@
     let infectionRadius = 300;
     let infectionGrow = 1.5;
 
-<!--    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // infection bloom
-      ctx.beginPath();
-      ctx.arc(canvas.width / 2, canvas.height / 2, infectionRadius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(0,255,100,0.15)";
-      ctx.fill();
-      infectionRadius += infectionGrow;
-      infectionGrow *= 1.02;
-
-      // particles
-      particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0,255,100,0.8)";
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    }-->
-
-    <!--function animate() {
-    requestAnimationFrame(animate);
-
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.beginPath();
-    ctx.arc(canvas.width / 2, canvas.height / 2, infectionRadius, 0, Math.PI * 2);
-    ctx.fillStyle = "rgba(0,255,100,0.15)";
-    ctx.fill();
-
-    infectionRadius += infectionGrow;
-    infectionGrow *= 1.02;
-
-    particles.forEach(p => {
-        p.update();
-        p.draw(ctx);
-    });
-}-->
 function animate() {
     requestAnimationFrame(animate);
 
@@ -206,9 +163,8 @@ function animate() {
         p.draw(ctx);
     }
 }
-
+resize();
 animate();
-
     // fade out splash only (canvas stays)
     setTimeout(() => {
       const splash = document.getElementById("infection-splash");
