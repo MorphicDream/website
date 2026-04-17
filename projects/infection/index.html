@@ -8,15 +8,17 @@
 </head>
 
 <body>
+
+<!-- Infection Splash (fades away) -->
 <div id="infection-splash">
-    <canvas id="infection-canvas"></canvas>
     <div id="infection-overlay"></div>
 </div>
 
+<!-- Permanent animated background -->
+<canvas id="infection-canvas"></canvas>
+
 <div id="page-content">
-
-
-<div class="page">
+    <div class="page">
 
     <header class="site-header">
         <img src="/images/morphic1.png" alt="MorphicDream Logo" class="site-logo">
@@ -109,7 +111,6 @@
 
 </div>
 </div>
-
 <script>
     const canvas = document.getElementById("infection-canvas");
     const ctx = canvas.getContext("2d");
@@ -165,13 +166,10 @@
 
     animate();
 
-    // fade out after 2.5 seconds
+    // fade out splash only (canvas stays)
     setTimeout(() => {
       const splash = document.getElementById("infection-splash");
       splash.classList.add("hidden");
-
-      // remove from DOM after fade
-      setTimeout(() => splash.remove(), 900);
     }, 2500);
 </script>
 </body>
