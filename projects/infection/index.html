@@ -142,7 +142,7 @@
 
        infectionOpacity = Math.min(infectionOpacity + 0.005, 0.4);
 
-        if (infectionOpacity > 1) infectionOpacity = 1; // clamp
+        if (infectionOpacity > 0.4) infectionOpacity = 0.4; // clamp
 
         ctx.beginPath();
         ctx.arc(
