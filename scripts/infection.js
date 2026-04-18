@@ -34,12 +34,13 @@ console.log("DRAWING");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // green background
-  ctx.fillStyle = `rgba(0, 255, 0, ${greenAlpha})`;
+  //ctx.fillStyle = `rgba(0, 255, 0, ${greenAlpha})`;
+  ctx.fillStyle = `rgba(200, 50, 0, $(greenAlpha})`;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // particles
-  //ctx.fillStyle = "rgba(0,255,0,0.8)";
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "rgba(0,255,0,0.8)";
+  //ctx.fillStyle = "white";
   for (const p of particles) {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
