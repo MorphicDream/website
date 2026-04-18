@@ -15,7 +15,7 @@ if(document.body.classList.contains("infection-enabled")){
     window.addEventListener("resize", resize);
 
     // --- GREEN BACKGROUND ---
-    let greenAlpha = 0.15; // subtle glow
+    let greenAlpha = 0.5; // subtle glow
 
     // --- PARTICLES ---
     const particles = [];
