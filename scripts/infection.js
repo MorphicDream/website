@@ -35,7 +35,7 @@ console.log("DRAWING");
 
   // green background
   //ctx.fillStyle = `rgba(0, 255, 0, ${greenAlpha})`;
-  ctx.fillStyle = `rgba(200, 50, 0, $(greenAlpha})`;
+  ctx.fillStyle = `rgba(200, 50, 0, 0)`;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // particles
