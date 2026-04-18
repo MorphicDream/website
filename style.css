@@ -27,8 +27,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at top, #15192b 0, #05060a 55%);
-  /*background: transparent;*/
+  /*background: radial-gradient(circle at top, #15192b 0, #05060a 55%);*/
+  background: transparent;
   color: var(--text-main);
   font-family: var(--font-main);
 }
@@ -485,7 +485,7 @@ code{
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
   /*object-fit: cover;*/
 }
 
@@ -494,7 +494,7 @@ code{
     inset: 0;
     background: radial-gradient(circle, rgba(0,255,0,0.25) 0%, rgba(0,255,0,0) 70%);
     animation: breathe 3s ease-in-out infinite;
-    z-index: 0;
+    z-index: -1;
 }
 
 @keyframes breathe {
@@ -506,7 +506,7 @@ code{
 #page-content {
     transition: opacity 2s ease;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 #page-content.visible {
