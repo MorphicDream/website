@@ -27,7 +27,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: radial-gradient(circle at top, #15192b 0, #05060a 55%);
+  /*background: radial-gradient(circle at top, #15192b 0, #05060a 55%);*/
+  background: transparent;
   color: var(--text-main);
   font-family: var(--font-main);
 }
@@ -458,8 +459,6 @@ code{
   100% { transform: translate(0); }
 }
 
-
-
 /* green glow */
 .fixed-list li:hover {
   color: #66ff99;
@@ -471,35 +470,6 @@ code{
   color: #66aaff;
   text-shadow: 0 0 8px rgba(102, 170, 255, 0.6);
 }
-
-/* Infection Splash Screen */
-/*#infection-splash {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  z-index: 5;
-  opacity: 1;
-  transition: opacity 0.8s ease;
-}
-
-#infection-splash.hidden {
-  opacity: 0;
-  pointer-events: none;
-}*/
-
-/*#infection-splash {
-    position: fixed;
-    inset: 0;
-    background: black;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.8s ease;
-}*/
-
-/*#infection-splash.hidden {
-    opacity: 0;
-    pointer-events: none;
-}*/
 
 #infection-background {
     position: fixed;
@@ -534,7 +504,6 @@ code{
 }
 
 #page-content {
-    /*opacity: 0;*/
     transition: opacity 2s ease;
     position: relative;
     z-index: 1;
@@ -544,21 +513,10 @@ code{
     opacity: 1;
 }
 
-
 @keyframes infection-breathe {
     from { opacity: 0.15; }   /* dim */
     to   { opacity: 0.30; }   /* brighter */
 }
-
-
-/*#infection-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle, rgba(0,255,100,0.25) 0%, rgba(0,0,0,0) 70%);
-  mix-blend-mode: screen;
-  pointer-events: none;
-  animation: pulse 1.5s infinite alternate ease-in-out;
-}*/
 
 @keyframes pulse {
   from { opacity: 0.2; }

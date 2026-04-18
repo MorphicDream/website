@@ -30,6 +30,7 @@ if(document.body.classList.contains("infection-enabled")){
     }
 
 function draw() {
+console.log("DRAWING");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   // green background
