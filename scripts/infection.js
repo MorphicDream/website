@@ -35,7 +35,7 @@ console.log("DRAWING");
   // redish background
   //ctx.fillStyle = `rgba(0, 255, 0, ${greenAlpha})`;
   //This should make the canvas breathe
-  let pulse = 0.1 + Math.sin(Date.now() /1000) * 0.05;
+  let pulse = 0.03 + Math.sin(Date.now() /1000) * 0.02;
   ctx.fillStyle = `rgba(200, 50, 0, {$pulse})`;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
