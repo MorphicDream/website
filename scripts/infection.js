@@ -14,8 +14,7 @@ if(document.body.classList.contains("infection-enabled")){
     resize();
     window.addEventListener("resize", resize);
 
-    // --- GREEN BACKGROUND ---
-    let greenAlpha = 0.5; // subtle glow
+   // let greenAlpha = 0.5; // subtle glow
 
     // --- PARTICLES ---
     const particles = [];
@@ -33,15 +32,13 @@ function draw() {
 console.log("DRAWING");
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // green background
+  // redish background
   //ctx.fillStyle = `rgba(0, 255, 0, ${greenAlpha})`;
   ctx.fillStyle = `rgba(200, 50, 0, 0.1)`;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // particles
-  //ctx.fillStyle = "rgba(0,255,0,0.8)";
   ctx.fillStyle = "rgba(255,0,0,0.8"
-  //ctx.fillStyle = "white";
   for (const p of particles) {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
