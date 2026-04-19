@@ -38,7 +38,7 @@ console.log("DRAWING");
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
   // particles
-  ctx.fillStyle = "rgba(255,0,0,0.8"
+  ctx.fillStyle = "rgba(255,0,0,0.8)";
   for (const p of particles) {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
