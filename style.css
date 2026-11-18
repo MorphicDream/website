@@ -523,6 +523,37 @@ code{
   to { opacity: 0.5; }
 }
 
+.command-list {
+    margin-top: 1rem;
+  }
+
+.command-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.command-row code {
+    flex: 1;
+    padding: 0.6rem;
+    border-radius: 6px;
+    background: rgba(0,0,0,0.25);
+    font-family: monospace;
+}
+
+.command-row button {
+    border: none;
+    padding: 0.6rem 0.9rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.command-row button:hover {
+    opacity: 0.9;
+}
+
 
 
 

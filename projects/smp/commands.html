@@ -1,0 +1,189 @@
+<section class="project-card">
+
+  <h2>Jobs</h2>
+
+  <p>
+    Earn money by performing activities related to your profession.
+  </p>
+
+  <div class="command-list">
+
+    <div class="command-row">
+      <code>/jobs browse</code>
+      <button onclick="copyCommand('/jobs browse',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/jobs join Miner</code>
+      <button onclick="copyCommand('/jobs join Miner',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/jobs stats</code>
+      <button onclick="copyCommand('/jobs stats',this)">📋 Copy</button>
+    </div>
+
+  </div>
+
+  <div class="project-links">
+    <a href="https://www.zrips.net/jobs/" target="_blank" class="pill-link">
+      Official Guide
+    </a>
+  </div>
+
+</section>
+
+<section class="project-card">
+
+  <h2>Towny</h2>
+
+  <p>
+    Create towns, claim land and build communities.
+  </p>
+
+  <div class="command-list">
+
+    <div class="command-row">
+      <code>/town new MyTown</code>
+      <button onclick="copyCommand('/town new MyTown',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/town claim</code>
+      <button onclick="copyCommand('/town claim',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/town spawn</code>
+      <button onclick="copyCommand('/town spawn',this)">📋 Copy</button>
+    </div>
+
+  </div>
+
+  <div class="project-links">
+    <a href="https://townyadvanced.github.io/" target="_blank" class="pill-link">
+      Official Guide
+    </a>
+  </div>
+
+</section>
+
+<section class="project-card">
+
+  <h2>AuraSkills</h2>
+
+  <p>
+    Level skills to unlock passive bonuses and progression.
+  </p>
+
+  <div class="command-list">
+
+    <div class="command-row">
+      <code>/skills</code>
+      <button onclick="copyCommand('/skills',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/skills top</code>
+      <button onclick="copyCommand('/skills top',this)">📋 Copy</button>
+    </div>
+
+  </div>
+
+  <div class="project-links">
+    <a href="https://wiki.aurelium.dev/auraskills/" target="_blank" class="pill-link">
+      Official Guide
+    </a>
+  </div>
+
+</section>
+
+<section class="project-card">
+
+  <h2>Slimefun & InfinityExpansion</h2>
+
+  <p>
+    Technology, machines and progression systems.
+  </p>
+
+  <div class="command-list">
+
+    <div class="command-row">
+      <code>/sf guide</code>
+      <button onclick="copyCommand('/sf guide',this)">📋 Copy</button>
+    </div>
+
+  </div>
+
+  <div class="project-links">
+    <a href="https://slimefun.net/wiki/Home/" target="_blank" class="pill-link">
+      Official Guide
+    </a>
+  </div>
+
+</section>
+
+<section class="project-card">
+
+  <h2>Utilities</h2>
+
+  <div class="command-list">
+
+    <div class="command-row">
+      <code>/home</code>
+      <button onclick="copyCommand('/home',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/sethome</code>
+      <button onclick="copyCommand('/sethome',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/spawn</code>
+      <button onclick="copyCommand('/spawn',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/tpa Player</code>
+      <button onclick="copyCommand('/tpa Player',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/tags</code>
+      <button onclick="copyCommand('/tags',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/sit</code>
+      <button onclick="copyCommand('/sit',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/lay</code>
+      <button onclick="copyCommand('/lay',this)">📋 Copy</button>
+    </div>
+
+    <div class="command-row">
+      <code>/crawl</code>
+      <button onclick="copyCommand('/crawl',this)">📋 Copy</button>
+    </div>
+
+  </div>
+
+</section>
+
+<script>
+  function copyCommand(command, button) {
+
+      navigator.clipboard.writeText(command);
+
+      const originalText = button.innerHTML;
+
+      button.innerHTML = "✅ Copied";
+
+      setTimeout(() => {
+          button.innerHTML = originalText;
+      }, 1500);
+  }
+</script>
