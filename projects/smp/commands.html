@@ -32,17 +32,20 @@
 
     <div class="command-row">
       <code>/jobs browse</code>
-      <button onclick="copyCommand('/jobs browse',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/jobs browse',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/jobs join Miner</code>
-      <button onclick="copyCommand('/jobs join Miner',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/jobs join Miner',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/jobs stats</code>
-      <button onclick="copyCommand('/jobs stats',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/jobs stats',this)">Copy</button>
     </div>
 
   </div>
@@ -67,17 +70,20 @@
 
     <div class="command-row">
       <code>/town new MyTown</code>
-      <button onclick="copyCommand('/town new MyTown',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/town new MyTown',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/town claim</code>
-      <button onclick="copyCommand('/town claim',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/town claim',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/town spawn</code>
-      <button onclick="copyCommand('/town spawn',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/town spawn',this)">Copy</button>
     </div>
 
   </div>
@@ -102,12 +108,14 @@
 
     <div class="command-row">
       <code>/skills</code>
-      <button onclick="copyCommand('/skills',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/skills',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/skills top</code>
-      <button onclick="copyCommand('/skills top',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/skills top',this)">Copy</button>
     </div>
 
   </div>
@@ -132,7 +140,8 @@
 
     <div class="command-row">
       <code>/sf guide</code>
-      <button onclick="copyCommand('/sf guide',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/sf guide',this)">Copy</button>
     </div>
 
   </div>
@@ -153,42 +162,50 @@
 
     <div class="command-row">
       <code>/home</code>
-      <button onclick="copyCommand('/home',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/home',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/sethome</code>
-      <button onclick="copyCommand('/sethome',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/sethome',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/spawn</code>
-      <button onclick="copyCommand('/spawn',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/spawn',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/tpa Player</code>
-      <button onclick="copyCommand('/tpa Player',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/tpa Player',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/tags</code>
-      <button onclick="copyCommand('/tags',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/tags',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/sit</code>
-      <button onclick="copyCommand('/sit',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/sit',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/lay</code>
-      <button onclick="copyCommand('/lay',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/lay',this)">Copy</button>
     </div>
 
     <div class="command-row">
       <code>/crawl</code>
-      <button onclick="copyCommand('/crawl',this)">📋 Copy</button>
+      <button class="command-copy"
+              onclick="copyCommand('/crawl',this)">Copy</button>
     </div>
 
   </div>
@@ -198,15 +215,15 @@
 <script>
   function copyCommand(command, button) {
 
-      navigator.clipboard.writeText(command);
+    navigator.clipboard.writeText(command);
+    button.classList.add("copied");
+    const originalText = button.textContent;
+    button.textContent = "Copied";
 
-      const originalText = button.innerHTML;
-
-      button.innerHTML = "✅ Copied";
-
-      setTimeout(() => {
-          button.innerHTML = originalText;
-      }, 1500);
+    setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove("copied");
+    }, 1500);
   }
 </script>
 

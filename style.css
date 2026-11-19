@@ -549,16 +549,37 @@ code{
     */
 }
 
-.command-row button {
-    border: none;
-    padding: 0.6rem 0.9rem;
-    border-radius: 6px;
+.command-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 4px 10px;
+
+    border-radius: var(--radius-pill);
+    background: var(--pill-bg);
+    color: var(--text-main);
+
+    font-size: 0.8rem;
+    border: 1px solid rgba(255,255,255,0.04);
+
+    transition:
+        background 0.15s ease,
+        transform 0.1s ease,
+        border-color 0.15s ease;
+
     cursor: pointer;
-    font-weight: 600;
 }
 
-.command-row button:hover {
-    opacity: 0.9;
+.command-copy:hover {
+    background: var(--pill-hover);
+    border-color: rgba(255,255,255,0.12);
+    transform: translateY(-1px);
+}
+
+.command-copy.copied {
+    color: var(--accent);
+    border-color: var(--accent);
 }
 
 
